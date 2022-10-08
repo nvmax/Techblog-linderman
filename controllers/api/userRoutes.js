@@ -5,6 +5,15 @@ const sequelize = require('../../configuration/connection');
 
 // get all users
 router.get('/', (req, res) => {
+    // get all users
+    User.findAll({
+        attributes: { exclude: ['password'] }
+    })
+    .then(dbUserData => res.json(dbUserData))
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 
 // get one user
