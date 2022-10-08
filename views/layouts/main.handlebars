@@ -1,27 +1,38 @@
 <html lang='en'>
 
 <head>
-  <meta charset='UTF-8' />
-  <meta http-equiv='X-UA-Compatible' content='IE=edge' />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>The Tech Blog</title>
+    <meta charset='UTF-8' />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/stylesheets/main.css" />
+    <title>The Tech Blog</title>
+
 </head>
 
 <body>
-  <nav></nav>
-  <section class='link'>
-
-    <a href='/'>Home </a>
-    <a href='/search'>Search </a>
-    <a id="logout" href='/'>Logout </a>
-  
-    <a href='/'>Home </a>
-    <a href='/login'>Login </a>
-    <a href='/register'>Register </a>
-
-  </section>
-
-
+    <section class="wrapper">
+        <header>
+            <h1>
+                <a href='/'>Home </a>
+            </h1>
+            <nav>
+                {{!-- need to make this in the handlebars with #if else for login and logout --}}
+                <a href='/login'>Login </a>
+                <a href='/register'>Register </a>
+                <a id="logout" href='/'>Logout </a>
+            </nav>
+        </header>
+        <section class='site-row'>
+            <div class="site-mainname">
+                <h1>The Tech Blog</h1>
+            </div>
+        </section>
+        <main>
+            {{{body}}}
+        </main>
+    </section>
+ {{!-- need to use this when logging out  --}}
+        <script src="/js/logout.js"></script>
 </body>
 
 </html>
