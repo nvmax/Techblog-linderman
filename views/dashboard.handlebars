@@ -1,0 +1,16 @@
+<section class="post-section">
+    <button type="button" class="btn" id="create-post">Create Post></button>
+</section>
+
+<section>
+    <h2>Dashboard</h2>
+    <ul class="post-list">
+        {{#each posts as |post|}}
+        <li>
+            {{> post-info post}} 
+            <a href="/dashboard/edit/{{post.id}}">Edit Post</a>
+        </li>
+        {{/each}}
+</section>
+
+<script src="/js/createpost.js"
